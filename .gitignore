@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Environment variables (keep secrets safe!)
+.env
+.env.local
+.env.production
+.env.development
+
+# Convex generated files
+convex/_generated/
+
+# Vite
+.vite/
+
+# TypeScript
+*.tsbuildinfo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
