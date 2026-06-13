@@ -2,10 +2,10 @@ import { useState, useRef, useEffect } from "react";
 import { useQuery, useMutation, useAction } from "convex/react";
 import { api } from "@/convex/_generated/api.js";
 import type { Id } from "@/convex/_generated/dataModel.d.ts";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
-import { Skeleton } from "@/components/ui/skeleton";
-import { Spinner } from "@/components/ui/spinner";
+import { Button } from "@/components/ui/button.tsx";
+import { Textarea } from "@/components/ui/textarea.tsx";
+import { Skeleton } from "@/components/ui/skeleton.tsx";
+import { Spinner } from "@/components/ui/spinner.tsx";
 import { toast } from "sonner";
 import { Brain, Send, Plus, Trash2, MessageSquare, Menu, X, ArrowLeft, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -48,7 +48,7 @@ function ChatSidebar({ userId, activeConversationId, onSelectConversation, onNew
               <div key={conv._id} onClick={() => { onSelectConversation(conv._id); onClose(); }} className={cn("group flex items-center gap-2 px-3 py-2.5 rounded-xl cursor-pointer transition-all", "hover:bg-sidebar-accent text-sm", activeConversationId === conv._id ? "bg-sidebar-accent text-sidebar-foreground" : "text-muted-foreground")}>
                 <MessageSquare className="w-3.5 h-3.5 flex-shrink-0" />
                 <span className="flex-1 truncate">{conv.title}</span>
-                <button onClick={(e) => handleDelete(e, conv._id)} className="opacity-0 group-hover:opacity-100 text-muted-foreground hover:text-destructive transition-all"><Trash2 className="w-3.5 h-3.5" /></button>
+                <button onClick={(e: React.MouseEvent) => handleDelete(e, conv._id)} className="opacity-0 group-hover:opacity-100 text-muted-foreground hover:text-destructive transition-all"><Trash2 className="w-3.5 h-3.5" /></button>
               </div>
             ))}
         </div>
